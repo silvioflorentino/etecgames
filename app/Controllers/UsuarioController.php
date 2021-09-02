@@ -36,5 +36,30 @@ Class UsuarioController extends BaseController{
         echo view('footer');
     }
 
+    public function todosUsuarios(){
+        $UsuarioModel = new \App\Models\UsuarioModel();
+        $registros = $UsuarioModel->find();
+        $data['usuarios'] = $registros;
+
+        echo view('header');
+        echo view('listaUsuario',$data);
+        echo view('footer');
+    }
+
+    public function listaCodUsuario(){
+        $request = service('request');
+        $codusuario = $request->getPost('codUsu');
+        $UsuarioModel = new \App\Models\UsuarioModel();
+        $registros = $UsuarioModel->find($codusuario);
+
+        $data['usuario'] = $registros;
+
+        echo view('header');
+        echo view('listaCodUsu',$data);
+        echo view('footer');
+    }
+
+
+
 
 }
