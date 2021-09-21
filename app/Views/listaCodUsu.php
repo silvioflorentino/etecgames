@@ -11,6 +11,8 @@
     <thead>
         <th>Código</th>
         <th>Email</th>
+        <th>Alterar</th>
+        <th>Excluir</th>
     </thead>
     <tbody>
 <?php
@@ -20,6 +22,19 @@ $emailusu = isset($usuario->emailUsu)?$usuario->emailUsu : "";
     <tr>
         <td><?php echo($codusu)?> </td>
         <td><?php echo($emailusu)?></td>
+        <td> 
+        <form method="POST">
+            <input type="hidden" name="codUsuAlterar" value="<?php echo ($usuario->codusu) ?>">
+            <button type="submit" class="btn btn-danger">Alterar</button>
+          </form>     
+        </td>
+        <td>
+          <form method="POST">
+            <input type="hidden" name="codUsu" value="<?php echo ($usuario->codusu) ?>">
+            <button type="submit" class="btn btn-danger">Deletar</button>
+          </form>
+        </td>
+
     </tr>
 
     </tbody>
