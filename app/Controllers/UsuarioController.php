@@ -70,6 +70,16 @@ class UsuarioController extends BaseController
         $UsuarioModel = new \App\Models\UsuarioModel();
         $registros = $UsuarioModel->find($codusuario);
 
+
+        if ($request->getPost('codUsuDeletar')) {
+            $this->deletarUsuario($request->getPost('codUsuDeletar'));
+            return redirect()->to(base_url('UsuarioController/todosUsuarios/'));
+        }
+
+        if ($request->getPost('codUsuAlterar')) {
+           return $this->alterarUsuario();
+        }
+
         $data['usuario'] = $registros;
 
         echo view('header');
@@ -106,12 +116,14 @@ class UsuarioController extends BaseController
         if (is_null($codusuario)) {
             return redirect()->to(base_url('UsuarioController/todosUsuarios'));
         }
-
+       
         $UsuarioModel = new \App\Models\UsuarioModel();
+        
         if ($UsuarioModel->delete($codusuario)) {
             //return redirect()->to(base_url('UsuarioController/todosUsuarios'));
         } else {
           //  return redirect()->to(base_url('UsuarioController/todosUsuarios'));
         }
+   
     }
 }

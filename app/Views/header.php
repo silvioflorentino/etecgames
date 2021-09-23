@@ -53,7 +53,7 @@
             <li><a class="dropdown-item" href="<?php echo base_url('./UsuarioController/inserirUsuario') ?>">Cadastro</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url('./UsuarioController/todosUsuarios')?>">Pesquisar Todos</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url('./UsuarioController/listaCodUsuario')?>">Pesquisar Por Código</a></li>
-            <li><a class="dropdown-item" href="#">Alterar/Deletar</a></li> 
+            <li><a class="dropdown-item" href="#">Pesquisar Por E-mail</a></li> 
           </ul>
         </li>
 

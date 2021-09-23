@@ -17,20 +17,20 @@
     <tbody>
 <?php
 $codusu = isset($usuario->codusu)?$usuario->codusu:"";
-$emailusu = isset($usuario->emailUsu)?$usuario->emailUsu : "";
+$emailusu =isset($usuario->emailUsu)?$usuario->emailUsu : "";
 ?>
     <tr>
         <td><?php echo($codusu)?> </td>
         <td><?php echo($emailusu)?></td>
         <td> 
         <form method="POST">
-            <input type="hidden" name="codUsuAlterar" value="<?php echo ($usuario->codusu) ?>">
+            <input type="hidden" name="codUsuAlterar" value="<?php echo ($codusu) ?>">
             <button type="submit" class="btn btn-danger">Alterar</button>
           </form>     
         </td>
         <td>
           <form method="POST">
-            <input type="hidden" name="codUsu" value="<?php echo ($usuario->codusu) ?>">
+            <input type="hidden" name="codUsuDeletar" value="<?php echo ($codusu) ?>">
             <button type="submit" class="btn btn-danger">Deletar</button>
           </form>
         </td>
